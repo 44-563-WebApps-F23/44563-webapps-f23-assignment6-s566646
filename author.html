@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Author details
+        </title>
+    </head>
+    <h1> Author entry by srilatha</h1>
+ 
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="Author">The hidden Author name</label>
+    <input type ="password" id="Author" name="Author" value="Monet"> <br>
+    <br>
+    <label for="guessAuthor">Guess the Author</label>
+    <input type ="text" id="guessAuthor" name="guessAuthor" autofocus> <br>
+    <br>
+    <input type="button" class="btn-primary" onclick="checkAuthor()" value="Check the guess">
+</form>
+<p id="results">The count of good and oops guess </p>
+<script> 
+var good = 0;
+var oops=0;
+var count=0;
+function checkAuthor(){
+    console.log("Getting form values")
+    AuthorName = document.getElementById("Author").value
+    guessAuthorname = document.getElementById("guessAuthor").value
+    out = document.getElementById("results")
+    if(AuthorName == guessAuthorname){
+        alert("You got it right")
+        good = good +1
+        out.innerHTML = "Correct Answer: " +good + " "+  "Wrong Answer: " + oops;
+    }else
+    {
+        alert("Sorry")
+        count = count+1
+        oops = oops+1
+        out.innerHTML = "Correct Answer: " +good + " "+  "Wrong Answer: " + oops;
+        if(count>10){
+            out.innerHTML=' Sorry, ran out of guesses'
+            document.getElementById('togglee').style.visibility = 'hidden'
+        }
+    }
+}
+</script>
+</body>
+</html> 
