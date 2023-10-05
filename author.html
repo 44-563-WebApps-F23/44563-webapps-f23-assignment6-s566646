@@ -21,6 +21,10 @@
     <input type="button" class="btn-primary" onclick="checkAuthor()" value="Check the guess">
 </form>
 <p id="results">The count of good and oops guess </p>
+<div class="container">
+    <img src="city1.jpg"  width="100" 
+    height="100" id="city1" onclick="selectImage()">
+</div>
 <script> 
 var good = 0;
 var oops=0;
@@ -46,6 +50,23 @@ function checkAuthor(){
         }
     }
 }
+var useImage=1;
+    function selectImage(){
+        switch(useImage){
+            case 1: 
+            useImage=2;
+            document.getElementById("city1").src="city1.jpg";
+            break;
+            case 2: 
+            useImage=3;
+            document.getElementById("city1").src="city2.jpg";
+            break;
+            case 3: 
+            useImage=1;
+            document.getElementById("city1").src="city3.jpg";
+            break;
+        }
+    }
 </script>
 </body>
 </html> 
